@@ -8,6 +8,8 @@
 
 import UIKit
 
+var btc:Float = 0.00
+
 class ViewController: UIViewController {
     
     
@@ -17,17 +19,64 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var minTradeLabel: UILabel!
     
-    
     @IBOutlet weak var lastTradeCoinDeskLabel: UILabel!
     
     @IBOutlet weak var maxTradeCoinDeskLabel: UILabel!
     
     @IBOutlet weak var minTradeCoinDeskLabel: UILabel!
     
+    @IBOutlet weak var usdMxnLabel: UILabel!
+    
+    @IBOutlet weak var mxnBtcLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //******************************* Task for get the Btc currentPrice *********************************
+        let urlCoinDesk = NSURL(string: "https://api.coindesk.com/v1/bpi/currentprice.json")
+        let sessionCoinDesk = NSURLSession.sharedSession()
+        let taskCoinDesk = sessionCoinDesk.dataTaskWithURL(urlCoinDesk!, completionHandler:{data, response, error -> Void in
+            
+            do {
+                let JSON = try NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers)
+                guard let JSONDictionary :NSDictionary = JSON as? NSDictionary else {
+                    print("Not a Dictionary")
+                    // put in function
+                    return
+                }
+                
+                //print("JSONDictionary! \(JSONDictionary["bpi"]!["USD"]!!["rate"])")
+                dispatch_async(dispatch_get_main_queue()) {
+                    let priceLastCoinDesk = JSONDictionary["bpi"]!["USD"]!!["rate"] as! String
+                    btc = Float(priceLastCoinDesk)!
+                    print(btc)
+                }
+            }
+            catch let JSONError as NSError {
+                print("\(JSONError)")
+            }
+            
+        })
+        taskCoinDesk.resume()// End of task
+        
+        
+        //************************************* Task for scrape the Btc change rate ******************************
+       /* let url = NSURL(string: "https://www.coindesk.com/price")
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
+            if error != nil{
+                dispatch_async(dispatch_get_main_queue()) {
+                    let urlContent = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print(urlContent)
+                }
+            }else{
+                print("Error loading")
+                
+            }
+        })
+        task.resume()*/
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +128,6 @@ class ViewController: UIViewController {
             
         })
         task.resume()
-        //**************************************************************************************************
         //**************************** Task for CoinDesk API ***********************************************
         let urlCoinDesk = NSURL(string: "https://api.coindesk.com/v1/bpi/currentprice.json")
         let sessionCoinDesk = NSURLSession.sharedSession()
@@ -98,7 +146,6 @@ class ViewController: UIViewController {
                     let priceLastCoinDesk = JSONDictionary["bpi"]!["USD"]!!["rate"] as! String
                     let temp = Float(priceLastCoinDesk)
                     let temp2 = String(format:"%.2f", temp!)
-                    print(temp2)
                     let last = "\(temp2) USD"
                     self.lastTradeCoinDeskLabel.text = last
 
@@ -111,7 +158,39 @@ class ViewController: UIViewController {
         })
         taskCoinDesk.resume()
 
+        //******************************* Task for exchange ********************************************************
         
+        let urlExchange = NSURL(string: "http://apilayer.net/api/live?access_key=f6b79d043067c022b04be22e6ca2e83f&currencies=USD,MXN&format=1")
+        let sessionExchange = NSURLSession.sharedSession()
+        let taskExchange = sessionExchange.dataTaskWithURL(urlExchange!, completionHandler:{data, response, error -> Void in
+            
+            
+            do {
+                let JSON = try NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers)
+                guard let JSONDictionary :NSDictionary = JSON as? NSDictionary else {
+                    print("Not a Dictionary")
+                    // put in function
+                    return
+                }
+                
+                
+               // print("JSONDictionary! \(JSONDictionary["quotes"]!["USDMXN"])")
+                dispatch_async(dispatch_get_main_queue()) {
+                    let priceExchange = JSONDictionary["quotes"]!["USDMXN"] as! NSNumber
+                    let temp = String(format:"%.2f", Float(priceExchange))
+                    let last = "$\(temp) MXN"
+                    self.usdMxnLabel.text = last
+                    let temp2 = String(format:"%.2f", Float(Float(priceExchange)*btc))
+                    self.mxnBtcLabel.text = "$\(temp2) MXN"
+                }
+            }
+            catch let JSONError as NSError {
+                print("\(JSONError)")
+            }
+            
+        })
+        taskExchange.resume()
+        //***************************************************************************************************************
         
         //adding a loading alert
         let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .Alert)

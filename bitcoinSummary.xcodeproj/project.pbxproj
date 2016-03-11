@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381DCA971C8B74000011ED2E /* btc_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 381DCA961C8B74000011ED2E /* btc_58.png */; };
+		384475321C8BB9F100D998D8 /* btc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 384475311C8BB9F100D998D8 /* btc_logo.png */; };
 		38AFBB351C8A59CF0004C834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFBB341C8A59CF0004C834 /* AppDelegate.swift */; };
 		38AFBB371C8A59CF0004C834 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFBB361C8A59CF0004C834 /* ViewController.swift */; };
 		38AFBB3A1C8A59CF0004C834 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AFBB381C8A59CF0004C834 /* Main.storyboard */; };
-		38AFBB3C1C8A59CF0004C834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AFBB3B1C8A59CF0004C834 /* Assets.xcassets */; };
 		38AFBB3F1C8A59CF0004C834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AFBB3D1C8A59CF0004C834 /* LaunchScreen.storyboard */; };
-		38AFBB4B1C8A6C680004C834 /* lastTradeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AFBB4A1C8A6C680004C834 /* lastTradeLabel.swift */; };
+		38DFB36B1C8B74CC00893229 /* btc_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 38DFB36A1C8B74CC00893229 /* btc_80.png */; };
+		38DFB36D1C8B75C700893229 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DFB36C1C8B75C700893229 /* Images-2.xcassets */; };
+		38DFB36F1C8B75D900893229 /* btc_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 38DFB36E1C8B75D900893229 /* btc_180.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381DCA961C8B74000011ED2E /* btc_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btc_58.png; sourceTree = "<group>"; };
+		384475311C8BB9F100D998D8 /* btc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btc_logo.png; sourceTree = "<group>"; };
 		38AFBB311C8A59CF0004C834 /* bitcoinSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitcoinSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AFBB341C8A59CF0004C834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38AFBB361C8A59CF0004C834 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38AFBB391C8A59CF0004C834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		38AFBB3B1C8A59CF0004C834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38AFBB3E1C8A59CF0004C834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38AFBB401C8A59CF0004C834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38AFBB4A1C8A6C680004C834 /* lastTradeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lastTradeLabel.swift; sourceTree = "<group>"; };
+		38DFB36A1C8B74CC00893229 /* btc_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btc_80.png; sourceTree = "<group>"; };
+		38DFB36C1C8B75C700893229 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		38DFB36E1C8B75D900893229 /* btc_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btc_180.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +64,14 @@
 			children = (
 				38AFBB341C8A59CF0004C834 /* AppDelegate.swift */,
 				38AFBB361C8A59CF0004C834 /* ViewController.swift */,
+				381DCA961C8B74000011ED2E /* btc_58.png */,
+				384475311C8BB9F100D998D8 /* btc_logo.png */,
+				38DFB36E1C8B75D900893229 /* btc_180.png */,
+				38DFB36A1C8B74CC00893229 /* btc_80.png */,
 				38AFBB381C8A59CF0004C834 /* Main.storyboard */,
-				38AFBB3B1C8A59CF0004C834 /* Assets.xcassets */,
 				38AFBB3D1C8A59CF0004C834 /* LaunchScreen.storyboard */,
 				38AFBB401C8A59CF0004C834 /* Info.plist */,
-				38AFBB4A1C8A6C680004C834 /* lastTradeLabel.swift */,
+				38DFB36C1C8B75C700893229 /* Images-2.xcassets */,
 			);
 			path = bitcoinSummary;
 			sourceTree = "<group>";
@@ -126,9 +135,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38DFB36D1C8B75C700893229 /* Images-2.xcassets in Resources */,
+				384475321C8BB9F100D998D8 /* btc_logo.png in Resources */,
 				38AFBB3F1C8A59CF0004C834 /* LaunchScreen.storyboard in Resources */,
-				38AFBB3C1C8A59CF0004C834 /* Assets.xcassets in Resources */,
 				38AFBB3A1C8A59CF0004C834 /* Main.storyboard in Resources */,
+				381DCA971C8B74000011ED2E /* btc_58.png in Resources */,
+				38DFB36B1C8B74CC00893229 /* btc_80.png in Resources */,
+				38DFB36F1C8B75D900893229 /* btc_180.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +152,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38AFBB4B1C8A6C680004C834 /* lastTradeLabel.swift in Sources */,
 				38AFBB371C8A59CF0004C834 /* ViewController.swift in Sources */,
 				38AFBB351C8A59CF0004C834 /* AppDelegate.swift in Sources */,
 			);
@@ -254,6 +266,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = bitcoinSummary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apps.bitcoinSummary;
@@ -265,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = bitcoinSummary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apps.bitcoinSummary;
@@ -291,6 +305,7 @@
 				38AFBB451C8A59CF0004C834 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
